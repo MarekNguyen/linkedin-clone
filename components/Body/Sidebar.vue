@@ -1,5 +1,5 @@
 <template>
-    <div class="sidebar">
+    <div class="sidebar" :style="{ flex: flexPoint }">
         <div class="sidebar__top">
             <img
                 src="https://images.unsplash.com/photo-1594820169156-f530e8b92c16?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
@@ -31,11 +31,15 @@
         </div>
     </div>
 </template>
+<script>
+export default {
+    props: ["flexPoint"],
+};
+</script>
 <style scoped>
 .sidebar {
     top: 80;
     position: sticky;
-    flex: 0.2;
     border-radius: 10px;
     text-align: center;
     height: fit-content;
