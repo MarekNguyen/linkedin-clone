@@ -1,8 +1,16 @@
 <template>
-    <v-app>
+    <v-app class="app">
         <Header />
-        <Nuxt />
+        <v-container>
+            <Nuxt class="app__body" />
+        </v-container>
     </v-app>
 </template>
-
-<script></script>
+<style scoped>
+.app__body {
+    display: flex;
+}
+.app {
+    background-color: #f3f2ef;
+}
+</style>

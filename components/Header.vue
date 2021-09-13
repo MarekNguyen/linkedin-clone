@@ -4,11 +4,16 @@
             <img src="https://image.flaticon.com/icons/png/512/174/174857.png" alt="" />
             <div class="header__search">
                 <v-icon>mdi-magnify</v-icon>
-                <input type="text" className="" />
+                <input type="text" placeholder="Search" />
             </div>
         </div>
         <div class="header__right">
-            <HeaderOption />
+            <HeaderOption :icon="'mdi-home'"> Home </HeaderOption>
+            <HeaderOption :icon="'mdi-account-supervisor'"> My NetWork </HeaderOption>
+            <HeaderOption :icon="'mdi-briefcase-variant'"> Job </HeaderOption>
+            <HeaderOption :icon="'mdi-bell'"> Notifications </HeaderOption>
+            <HeaderOption :avatar="true"> Me </HeaderOption>
+            <HeaderOption :icon="'mdi-apps'"> Work </HeaderOption>
         </div>
     </div>
 </template>
@@ -22,6 +27,7 @@
     padding-top: 10px;
     padding-bottom: 10px;
     z-index: 999;
+    background-color: white;
 }
 .header__left {
     display: flex;
