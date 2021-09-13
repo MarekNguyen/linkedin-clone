@@ -4,6 +4,12 @@
         <div class="app__content">
             <BodyCreatePost />
             <BodyPost />
+            <BodyPost />
+            <BodyPost />
+            <BodyPost />
+            <BodyPost />
+            <BodyPost />
+            <BodyPost />
         </div>
         <BodyWidget :flexPoint="'0.3'" />
     </div>
