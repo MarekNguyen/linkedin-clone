@@ -16,6 +16,7 @@
 
 .widget__course:hover {
     background-color: whitesmoke;
+    cursor: pointer;
 }
 
 .course__name {

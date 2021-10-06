@@ -1,9 +1,6 @@
 <template>
     <v-app class="app">
-        <Header />
-        <v-container>
-            <Nuxt />
-        </v-container>
+        <Nuxt />
     </v-app>
 </template>
 <style scoped>

@@ -38,7 +38,7 @@ export default {
 </script>
 <style scoped>
 .sidebar {
-    top: 80;
+    top: 80px;
     position: sticky;
     border-radius: 10px;
     text-align: center;
