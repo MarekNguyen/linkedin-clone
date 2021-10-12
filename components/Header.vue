@@ -1,7 +1,9 @@
 <template>
     <div class="header">
         <div class="header__left">
-            <img src="https://image.flaticon.com/icons/png/512/174/174857.png" alt="" />
+            <nuxt-link to="/" class="header__icon">
+                <img src="https://image.flaticon.com/icons/png/512/174/174857.png" alt="" />
+            </nuxt-link>
             <div class="header__search">
                 <v-icon>mdi-magnify</v-icon>
                 <input type="text" placeholder="Search" />
@@ -10,7 +12,9 @@
         <div class="header__right">
             <HeaderOption :icon="'mdi-home'"> Home </HeaderOption>
             <HeaderOption :icon="'mdi-account-supervisor'"> My NetWork </HeaderOption>
-            <HeaderOption :icon="'mdi-briefcase-variant'"> Job </HeaderOption>
+            <nuxt-link to="/job" style="text-decoration: none">
+                <HeaderOption :icon="'mdi-briefcase-variant'"> Job </HeaderOption>
+            </nuxt-link>
             <HeaderOption :icon="'mdi-bell'"> Notifications </HeaderOption>
             <HeaderOption :avatar="true"> Me </HeaderOption>
             <HeaderOption :icon="'mdi-apps'"> Work </HeaderOption>
@@ -33,10 +37,14 @@
     display: flex;
     align-items: center;
 }
-.header__left > img {
-    object-fit: contain;
-    height: 40px;
+.header__icon {
     margin-right: 10px;
+    object-fit: contain;
+    display: flex;
+    align-items: center;
+}
+.header__icon > img {
+    height: 40px;
 }
 .header__search {
     padding: 20px;
