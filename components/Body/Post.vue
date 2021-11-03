@@ -12,7 +12,7 @@
                     <img src="https://cdn.vuetifyjs.com/images/john.jpg" alt="John" />
                 </v-avatar>
                 <div>
-                    <div class="post__author__name">Nguyen Duc Manh</div>
+                    <div class="post__author__name">{{ post.data.name }}</div>
                     <div class="post__author__title">Founder at Ohmytech.pl</div>
                     <div class="post__description">
                         <div class="post__time">10h</div>
@@ -26,7 +26,7 @@
                 </div>
             </div>
             <div class="post__content">
-                <div class="content">Nowe Porsche Macan. Świat nie czeka. Dlaczego miałbyś Ty?</div>
+                <div class="content">{{ post.data.message }}</div>
             </div>
             <div class="post__summary">
                 <div class="post__likes">
@@ -65,6 +65,11 @@
         </div>
     </div>
 </template>
+<script>
+export default {
+    props: ["post"],
+};
+</script>
 <style scoped>
 .app__post {
     background-color: white;
