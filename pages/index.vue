@@ -10,11 +10,9 @@
 <script>
 import { mapGetters } from "vuex";
 export default {
+    middleware: "auth",
     computed: {
         ...mapGetters({ user: "Auth/user" }),
-    },
-    created() {
-        if (!this.user) this.$router.push("/login");
     },
 };
 </script>

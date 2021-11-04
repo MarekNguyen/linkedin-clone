@@ -1,6 +1,5 @@
-import { db } from '../database/firebase'
-import { collection, addDoc, Timestamp, onSnapshot } from 'firebase/firestore'
-const postsRef = collection(db, "posts")
+import { postsRef } from '../database/firebase'
+import { addDoc, Timestamp, onSnapshot } from 'firebase/firestore'
 export default {
     namespaced: true,
     state() {
@@ -20,12 +19,14 @@ export default {
     },
     actions: {
         getPosts({ commit }, payload){
-            return onSnapshot(postsRef, snapshot => {
-                commit('initPosts', snapshot.docs.map(doc => ({ 
-                    id: doc.id,
-                    data: doc.data()
-                })))
-            })
+            onSnapshot(postsRef, (snapshot) => {
+                commit("initPosts",
+                    snapshot.docs.map((doc) => ({
+                        id: doc.id,
+                        data: doc.data(),
+                    }))
+                )
+            });
         },
         async createPost({ commit }, payload) {
             const docRef = await addDoc(postsRef, {

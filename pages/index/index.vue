@@ -18,6 +18,7 @@ import { mapGetters } from "vuex";
 export default {
     methods: {
         getData() {
+            console.log("getData");
             this.$store.dispatch("Post/getPosts");
         },
     },

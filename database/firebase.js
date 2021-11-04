@@ -1,6 +1,6 @@
 import { initializeApp } from 'firebase/app';
 import { getAuth } from "firebase/auth";
-import { getFirestore } from "firebase/firestore";
+import { getFirestore, collection, onSnapshot } from "firebase/firestore";
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
     apiKey: "AIzaSyBkDWUnsicJUFXLx8-3sAhsAJukNSnNYco",
@@ -11,8 +11,10 @@ const firebaseConfig = {
     appId: "1:1027104739834:web:bcc0efdcc2c6213176d443",
     measurementId: "G-L7VL4ZRHTB"
 };    
+
 const app = initializeApp(firebaseConfig);
 const db = getFirestore();
 const auth = getAuth();
+const postsRef = collection(db, "posts")
 
-export { db, auth };
+export { db, auth, postsRef, onSnapshot };

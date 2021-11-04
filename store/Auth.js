@@ -31,7 +31,7 @@ export default {
                 });
         },
         signIn({commit}, { email, password}) {
-            return signInWithEmailAndPassword(auth, email, password)
+            signInWithEmailAndPassword(auth, email, password)
                 .then((userCredential) => {
                     const user = userCredential.user;
                     commit('initUser', user);

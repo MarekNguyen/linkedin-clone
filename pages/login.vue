@@ -7,9 +7,6 @@
 <script>
 import { mapGetters } from "vuex";
 export default {
-    created() {
-        if (this.user) this.$router.push("/");
-    },
     computed: {
         ...mapGetters({ user: "Auth/user" }),
     },
