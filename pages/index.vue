@@ -14,7 +14,7 @@ export default {
         ...mapGetters({ user: "Auth/user" }),
     },
     created() {
-        // if (!this.user) this.$router.push("/login");
+        if (!this.user) this.$router.push("/login");
     },
 };
 </script>

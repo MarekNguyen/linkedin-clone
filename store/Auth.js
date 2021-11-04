@@ -1,13 +1,47 @@
+import {  createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from '../database/firebase'
 export default {
     namespaced: true,
     state() {
-        user: false
+        return {
+            user: false
+        }
     },
     getters:{
         user(state) {
             return state.user;
         }
     },
-    mutations: {},
-    actions: {}
+    mutations: {
+        initUser(state, payload) {
+            state.user = payload
+        }
+    },
+    actions: {
+        signUp({ commit }, { email, password } ) {
+            createUserWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    const user = userCredential.user;
+                    commit('initUser', user);
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    console.log(errorMessage)
+                });
+        },
+        signIn({commit}, { email, password}) {
+            return signInWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    const user = userCredential.user;
+                    commit('initUser', user);
+                    
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    console.log(errorMessage)   
+                });
+        }
+    }
 }

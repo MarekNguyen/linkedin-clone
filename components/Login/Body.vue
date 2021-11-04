@@ -5,11 +5,11 @@
                 <v-card class="login__form">
                     <h1>Sign in</h1>
                     <p>Stay updated on your professional world</p>
-                    <v-text-field outlined label="Email"></v-text-field>
-                    <v-text-field outlined label="Password"></v-text-field>
+                    <v-text-field outlined label="Email" v-model="email"></v-text-field>
+                    <v-text-field outlined label="Password" v-model="password"></v-text-field>
                     <v-btn text rounded small color="primary">Forgot password?</v-btn>
                     <Spacer />
-                    <v-btn color="primary" rounded block large> sign in</v-btn>
+                    <v-btn color="primary" rounded block large @click="signIn"> sign in</v-btn>
                 </v-card>
                 <Spacer />
                 <div class="login__form__footer">
@@ -21,7 +21,20 @@
     </div>
 </template>
 <script>
-export default {};
+export default {
+    data() {
+        return {
+            email: "",
+            password: "",
+        };
+    },
+    methods: {
+        async signIn() {
+            await this.$store.dispatch("Auth/signIn", { password: this.password, email: this.email });
+            this.$router.push("/");
+        },
+    },
+};
 </script>
 <style scoped>
 .login__main {
