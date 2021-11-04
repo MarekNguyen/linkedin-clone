@@ -8,8 +8,8 @@
                         <p>Stay updated on your professional world</p>
                         <v-text-field outlined label="Your Fullname" v-model="name"></v-text-field>
                         <v-text-field outlined label="Email" v-model="email"></v-text-field>
-                        <v-text-field outlined label="Password" v-model="password"></v-text-field>
-                        <v-text-field outlined label="Confirm password" v-model="confirmPassword"></v-text-field>
+                        <v-text-field outlined label="Password" v-model="password" type="password"></v-text-field>
+                        <v-text-field outlined label="Confirm password" v-model="confirmPassword" type="password"></v-text-field>
                         <v-btn text rounded small color="primary">Forgot password?</v-btn>
                         <Spacer />
                         <v-btn color="primary" rounded block large @click="signUp"> sign up</v-btn>

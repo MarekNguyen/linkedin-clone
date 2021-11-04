@@ -6,7 +6,7 @@
                     <h1>Sign in</h1>
                     <p>Stay updated on your professional world</p>
                     <v-text-field outlined label="Email" v-model="email"></v-text-field>
-                    <v-text-field outlined label="Password" v-model="password"></v-text-field>
+                    <v-text-field outlined label="Password" v-model="password" type="password"></v-text-field>
                     <v-btn text rounded small color="primary">Forgot password?</v-btn>
                     <Spacer />
                     <v-btn color="primary" rounded block large @click="signIn"> sign in</v-btn>
