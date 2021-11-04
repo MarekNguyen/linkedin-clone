@@ -47,6 +47,7 @@
     </div>
 </template>
 <script>
+import { mapGetters } from "vuex";
 export default {
     data() {
         return {
@@ -55,10 +56,13 @@ export default {
             description: "this is a Post",
         };
     },
+    computed: {
+        ...mapGetters({ user: "Auth/user" }),
+    },
     methods: {
         async createPost() {
             await this.$store.dispatch("Post/createPost", {
-                name: "testset",
+                name: this.user.displayName,
                 description: this.description,
                 message: this.message,
             });

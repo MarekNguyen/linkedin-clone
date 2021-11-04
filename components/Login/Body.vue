@@ -14,7 +14,7 @@
                 <Spacer />
                 <div class="login__form__footer">
                     <div>New to LinkedIn?</div>
-                    <v-btn rounded text color="primary"> Join Now</v-btn>
+                    <v-btn rounded text color="primary" to="/"> Join Now</v-btn>
                 </div>
             </v-col>
         </v-row>
@@ -30,8 +30,14 @@ export default {
     },
     methods: {
         async signIn() {
-            await this.$store.dispatch("Auth/signIn", { password: this.password, email: this.email });
-            this.$router.push("/");
+            this.$store.dispatch("Auth/signIn", { password: this.password, email: this.email }).then(
+                (res) => {
+                    this.$router.push("/");
+                },
+                (error) => {
+                    console.log("error");
+                }
+            );
         },
     },
 };

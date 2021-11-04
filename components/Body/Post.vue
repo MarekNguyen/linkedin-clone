@@ -165,4 +165,8 @@ export default {
     display: flex;
     padding: 0 10px;
 }
+
+.content {
+    white-space: pre;
+}
 </style>

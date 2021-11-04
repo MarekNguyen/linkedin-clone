@@ -16,7 +16,9 @@
                 <HeaderOption :icon="'mdi-briefcase-variant'"> Job </HeaderOption>
             </nuxt-link>
             <HeaderOption :icon="'mdi-bell'"> Notifications </HeaderOption>
-            <HeaderOption :avatar="true"> Me </HeaderOption>
+            <nuxt-link to="/profile" style="text-decoration: none">
+                <HeaderOption :avatar="true"> Me </HeaderOption>
+            </nuxt-link>
             <HeaderOption :icon="'mdi-apps'"> Work </HeaderOption>
         </div>
     </div>
